@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBERMFVR4Q"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MBERMFVR4Q');
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ahahhahahahhah</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+  <div class="container">
+    <h1 id="text1"></h1>
+    <img src="z.gif">
+  </div>
+  <button class="nextBtn" onclick="nextPage(2)">>>></button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <div class="container">
+    <h1 id="text2"></h1>
+    <img src="q.gif">
+  </div>
+  <button class="nextBtn" onclick="nextPage(3)">>>></button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <div class="container">
+    <h1 id="text3"></h1>
+    <img src="l.gif">
+  </div>
+  <button class="nextBtn" onclick="nextPage(4)">>>></button>
+</div>
+
+  </<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <div class="container">
+    <h1 id="text4"></h1>
+    <img src="m.gif">
+
+    <div id="choiceBox">
+      <button id="okBtn" onclick="goToPassword()">OKKK</button>
+      <button id="noBtn" onclick="choiceNo()">NO</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page active" id="page5">
+  <div class="container">
+
+    <h1 id="passwordText"></h1>
+
+    <img id="passwordGif" src="heh.gif">
+
+    <input id="passwordInput" type="password" placeholder="that silly nickname">
+
+    <button onclick="checkPassword()">confirm</button>
+
+
+
+  </div>
+</div>
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+  <div class="container candleContainer">
+
+    <div id="textAboveGif">
+      <h1 id="wishText"></h1>
+      <h1 id="birthdayText"></h1>
+    </div>
+
+    <div id="candleBox">
+      <img id="candleGif" src="candie.gif">
+
+      <video id="candleVideo" playsinline>
+        <source src="candie2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div id="micOverlay" class="overlay">
+      <div class="overlayBox">
+        <p>allow mic access?</p>
+
+        <div class="overlayBtns">
+          <button onclick="enableMic()">oke</button>
+        </div>
+      </div>
+    </div>
+    
+<img
+id="letterBtn"
+src="letter.gif"
+onclick="goToFinal()"
+style="display:none;"
+alt="Open Letter">
+
+  </div>
+</div>
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+
+  <div class="letterViewer">
+
+    <img src="letter.png" alt="Letter">
+
+  </div>
+
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="iyot.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>

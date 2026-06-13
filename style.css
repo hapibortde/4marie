@@ -1,0 +1,495 @@
+body{
+margin:0;
+height:100dvh;
+overflow:hidden;
+font-family:Arial;
+background:url("b.jpg") center/cover no-repeat;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+z-index:0;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:transparent;
+opacity:0;
+pointer-events:none;
+transition:.5s;
+z-index:1;
+}
+
+.page.active{
+opacity:1;
+pointer-events:auto;
+}
+
+.container{
+color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+z-index:2;
+}
+
+img{
+width:280px;
+height:auto;
+object-fit:contain;
+border-radius:12px;
+}
+
+#candleBox{
+width:280px;
+height:280px;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+#candleBox img,
+#candleBox video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:contain;
+border-radius:12px;
+}
+
+#candleVideo{
+display:none;
+}
+
+h1{
+margin:0;
+min-height:40px;
+}
+
+/* FIXES THE LAYOUT SHIFT */
+#textSlot{
+height:50px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+#textSlot h1{
+min-height:auto;
+margin:0;
+}
+
+#birthdayText{
+display:none;
+}
+
+.nextBtn{
+position:absolute;
+bottom:20px;
+right:20px;
+padding:10px 18px;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,.2);
+color:white;
+cursor:pointer;
+z-index:3;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.7);
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+pointer-events:none;
+transition:.3s ease;
+z-index:5;
+}
+
+.overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+.overlayBox{
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(8px);
+padding:20px;
+border-radius:12px;
+color:white;
+text-align:center;
+width:260px;
+}
+
+.overlayBtns{
+display:flex;
+justify-content:center;
+margin-top:15px;
+}
+
+.overlayBtns button{
+padding:10px 18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+width:100%;
+}
+
+#letterBtn{
+display:none;
+opacity:0;
+}
+
+/* PAGE 6 CUSTOM LAYOUT */
+.candleContainer{
+gap:0 !important;
+}
+
+#candleBox{
+margin-bottom:-20px;
+}
+
+#wishText,
+#birthdayText{
+margin-top:-25px;
+margin-bottom:0;
+min-height:40px;
+}
+
+#letterBtn{
+position:absolute;
+bottom:100px;
+left:50%;
+transform:translateX(-50%);
+}
+
+/* move text ABOVE gif */
+#textAboveGif{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+margin-bottom:-10px;
+}
+
+#wishText,
+#birthdayText{
+margin:0;
+min-height:30px;
+}
+
+/* tighter spacing */
+.candleContainer{
+gap:0 !important;
+}
+
+/* LETTER PAGE */
+
+.letterViewer{
+
+width:100%;
+height:100%;
+
+overflow-y:auto;
+overflow-x:hidden;
+
+display:flex;
+justify-content:flex-start;
+align-items:center;
+flex-direction:column;
+
+padding:20px;
+box-sizing:border-box;
+
+opacity:0;
+transition:opacity 10s ease;
+}
+
+/* HERE */
+.page.active .letterViewer{
+opacity:1;
+}
+
+.letterViewer img{
+width:min(1000px, 95vw);
+height:auto;
+border-radius:12px;
+display:block;
+}
+
+/* CHANGE FONT HERE */
+font-family: "Times New Roman", serif;
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#222;
+
+white-space:pre-line;
+}
+
+/* scrollbar */
+
+.letterContent::-webkit-scrollbar{
+width:6px;
+}
+
+.letterContent::-webkit-scrollbar-thumb{
+background:rgba(0,0,0,.25);
+border-radius:20px;
+}
+
+.letterViewer{
+width:100%;
+height:100%;
+overflow-y:auto;
+
+display:flex;
+justify-content:flex-start;
+align-items:center;
+flex-direction:column;
+
+padding:20px;
+box-sizing:border-box;
+}
+
+.letterViewer img{
+width:min(900px, 95vw);
+height:auto;
+border-radius:12px;
+}
+
+/* =========================
+   DESKTOP / LARGE SCREENS
+   ========================= */
+@media (min-width: 768px){
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+img{
+width:420px;
+}
+
+#candleBox{
+width:420px;
+height:420px;
+}
+
+h1{
+font-size:2.2rem;
+}
+
+.nextBtn,
+button{
+font-size:1rem;
+padding:12px 22px;
+}
+
+input{
+font-size:1rem;
+padding:12px;
+width:320px;
+}
+
+.letterViewer img{
+width:min(1000px, 90vw);
+}
+
+}
+
+/* =========================
+   PHONES
+   ========================= */
+@media (max-width: 767px){
+
+img{
+width:280px;
+}
+
+#candleBox{
+width:280px;
+height:280px;
+}
+
+h1{
+font-size:1.6rem;
+}
+
+input{
+width:220px;
+}
+.letterViewer{
+width:100%;
+height:100vh;
+overflow-y:auto;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:flex-start;
+
+padding-top:30px;
+padding-bottom:30px;
+box-sizing:border-box;
+}
+
+}
+
+
+#choiceBox{
+display:flex;
+gap:12px;
+align-items:center;
+justify-content:center;
+margin-top:10px;
+}
+
+#okBtn,
+#noBtn{
+border:none;
+border-radius:10px;
+padding:12px 20px;
+cursor:pointer;
+transition:.35s ease;
+}
+
+#letterBtn{
+width:120px;
+height:auto;
+cursor:pointer;
+
+opacity:0;
+transition:opacity 1.5s ease;
+}
+
+/* Remove blue tap highlight */
+
+*{
+-webkit-tap-highlight-color: transparent;
+}
+
+/* Remove focus outline */
+
+button,
+input,
+img{
+outline:none;
+}
+
+button:focus,
+button:active,
+input:focus,
+img:focus{
+outline:none;
+}
+
+.letterViewer img{
+-webkit-user-drag:none;
+user-select:none;
+-webkit-touch-callout:none;
+pointer-events:none;
+}
+
+/* Disable text selection everywhere */
+
+*{
+-webkit-user-select:none;
+user-select:none;
+-webkit-touch-callout:none;
+}
+
+/* Disable image dragging */
+
+img{
+-webkit-user-drag:none;
+user-select:none;
+}
+
+/* Prevent horizontal scrolling */
+
+html,
+body{
+overflow-x:hidden;
+width:100%;
+max-width:100%;
+}
+
+/* Keep all elements inside screen width */
+
+*{
+box-sizing:border-box;
+}
+
+/* FIX LETTER WHITE GAP ON SCROLL */
+
+.letterViewer{
+background:transparent;
+will-change: transform;
+transform: translateZ(0);
+}
+
+.letterViewer img{
+display:block;
+width:95vw;
+max-width:100%;
+height:auto;
+}
+
+/* prevent weird white overscroll flash (mobile) */
+.letterViewer{
+overscroll-behavior: contain;
+}
+
+/* iOS/Android scroll repaint fix */
+.page{
+backface-visibility:hidden;
+-webkit-backface-visibility:hidden;
+}
+
+html, body{
+height:100%;
+overflow:hidden;
+}
+
+.page{
+height:100dvh;
+overflow:hidden;
+}
+
+/* ONLY the letter scrolls */
+.letterViewer{
+height:100%;
+overflow-y:auto;
+overflow-x:hidden;
+
+-webkit-overflow-scrolling:touch;
+overscroll-behavior:contain;
+background:transparent;
+}
+
+/* stop background "dragging" effect on mobile */
+body{
+position:fixed;
+width:100%;
+}
+
