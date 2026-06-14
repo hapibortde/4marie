@@ -114,9 +114,9 @@ noBtn.style.display = "none";
 /* PASSWORD */
 function checkPassword(){
 
-let v=document.getElementById("passwordInput").value;
+let v = document.getElementById("passwordInput").value.trim().toLowerCase();
 
-if(v==="kakaibabe"){
+if(v === "kakaibabe"){
 
 nextPage(6);
 
