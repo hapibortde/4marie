@@ -308,7 +308,7 @@ setTimeout(()=>{
 
 typeText(
 "passwordText",
-"ok wats da password"
+"the password is that silly nickname u game me"
 );
 
 },200);
