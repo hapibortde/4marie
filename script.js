@@ -195,7 +195,7 @@ setTimeout(()=>{
 
 typeText(
 "birthdayText",
-"HAPPY BIRTHDAY!1!11!!!🎉"
+"hapi birthday shonget!!!1!11!:p"
 );
 
 },3400);
